@@ -1,0 +1,18 @@
+#font-picker{
+    box-shadow: none;
+    width: 100%;
+    button{
+        @apply shadow bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight h-auto w-full pr-2;
+
+        .dropdown-icon.finished{
+            margin-top: -7px;
+            &:before{
+                @apply border border-gray-700;
+                transform: rotate(45deg);
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 2.4px;
+            }
+        }
+    }
+}
