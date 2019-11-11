@@ -120,7 +120,6 @@
 import Vue from 'vue';
 import FontPicker from 'font-picker-vue';
 import { Chrome } from 'vue-color'
-import VueTinyTabs from 'vue-tiny-tabs'
 import html2canvas from 'html2canvas';
 import gradientColors from '@/configs/gradients';
 import GithubButton from 'vue-github-button';
@@ -151,7 +150,6 @@ export default {
   components: {
     FontPicker,
     'color-picker': Chrome,
-    VueTinyTabs,
     GithubButton
   },
   methods:{
@@ -254,37 +252,6 @@ export default {
     transform:translateX(-50%);
     background-size: 100%;
     background-repeat: no-repeat
-  }
-
-  .tinytabs .tabs {
-    display: flex;
-    flex-flow: row wrap;
-    @apply border-b 
-  }
-  .tinytabs .tabs .tab .close {
-    padding-left: 5px;
-  }
-  .tinytabs .tabs .tab {
-    margin: 0 3px 0 0;
-    @apply bg-white;
-    display: block;
-    padding: 6px 15px;
-    text-decoration: none;
-    color: #666;
-    border-radius: 3px 3px 0 0;
-  }
-  .tinytabs .section {
-    overflow: hidden;
-    padding: 15px;
-    clear: both;
-    border-radius: 3px;
-  }
-  .tinytabs .tab.sel {
-    @apply bg-gray-200;
-    color: #333;
-    font-weight:bold;
-    text-shadow: none;
-    margin-bottom:-1px
   }
 
   .loader-overlay{
