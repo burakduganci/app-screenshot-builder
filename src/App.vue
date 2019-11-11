@@ -8,7 +8,7 @@
         <div id="logo">App Screenshot Builder</div>
         <nav class="flex justify-center py-5 border-b">
           <a href="https://github.com/burakduganci/app-screenshot-builder" class="mr-2 pr-2" target="_blank"><img :src="require('@/assets/images/github-logo.png')" width="25"></a>
-          <github-button href="https://github.com/burakduganci/app-screenshot-builder" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star burakduganci/app-screenshot-builder on GitHub">Star</github-button>
+          <github-button href="https://github.com/burakduganci/app-screenshot-builder" data-icon="octicon-star" data-size="large" aria-label="Star burakduganci/app-screenshot-builder on GitHub">Star</github-button>
         </nav>
 
         <div id="app-wrapper" class="my-8 bg-white rounded">
@@ -16,7 +16,7 @@
             <div class="tab-body flex p-10 bg-gray-300 rounded shadow">
               <div>
                 <button class="inline-block w-full mb-4 py-3 text-center bg-green-600 rounded text-white shadow hover:bg-green-700 outline-none" @click="downloadImage">Download</button>
-                <div class="screenshot-wrapper rounded relative cursor-pointer" :style="{'background': bgColor.hex8, 'font-size': fontSize + 'px' }" @click="changeScreenshot">
+                <div class="screenshot-wrapper rounded relative cursor-pointer" :style="{'background': bgColor.hex8, 'font-size': fontSize + 'px' }" @click="$refs.ss.click()">
                   <div class="editable-area flex justify-center items-center h-48 py-8 text-center overflow-hidden break-words">
                     <p :style="{'font-family': activeFont, 'font-size': fontSize + 'px', 'color': textColor.hex8 }">{{ text }}</p>
                   </div>
@@ -46,7 +46,7 @@
                     </label>
                     <div class="flex">
                       <input class="shadow appearance-none border rounded-bl rounded-tl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text" type="text" v-model="textColor.hex8" autocomplete="off">
-                      <button class="shadow button py-3 px-4 bg-white rounded-br rounded-tr bg-gray-100" @click="() => this.textPickerStatus = !this.textPickerStatus">Pick</button>
+                      <button class="shadow button py-3 px-4 bg-white rounded-br rounded-tr bg-gray-100" @click="() => this.textPickerStatus = true">Pick</button>
                     </div>
                     <color-picker class="absolute z-10" v-model="textColor" v-show="textPickerStatus"></color-picker>
                   </div>
@@ -91,7 +91,7 @@
                       </div>
                     </div>
                   </div>
-                  <input type="file" ref="ss" class="ss-file-input" @change="changeSS">
+                  <input type="file" ref="ss" class="ss-file-input" @change="changeSS" accept="image/*">
                 </div>
               </div>
             </div>
@@ -123,13 +123,13 @@ import { Chrome } from 'vue-color'
 import VueTinyTabs from 'vue-tiny-tabs'
 import html2canvas from 'html2canvas';
 import gradientColors from '@/configs/gradients';
-import GithubButton from 'vue-github-button'
+import GithubButton from 'vue-github-button';
 
 
 export default {
   data(){
     return ({
-      text: "Welcome to App Screen Builder",
+      text: "Welcome to App Screenshot Builder",
       activeFont: "Exo",
       phone: "nexus",
       fontSize: 32,
@@ -161,11 +161,7 @@ export default {
     setBgColor(color){
       this.bgColor.hex8 = color;
     },
-    changeScreenshot(){
-      this.$refs.ss.click()
-    },
     async changeSS(event){
-      console.log(this.getBaseUrl(event.target.files[0]));
       this.ss = await this.getBaseUrl(event.target.files[0]);
     },
     getBaseUrl(file)  {
