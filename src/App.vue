@@ -46,7 +46,7 @@
                     </label>
                     <div class="flex">
                       <input class="shadow appearance-none border rounded-bl rounded-tl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="text" type="text" v-model="textColor.hex8" autocomplete="off">
-                      <button class="shadow button py-3 px-4 bg-white rounded-br rounded-tr bg-gray-100" @click="() => this.textPickerStatus = true">Pick</button>
+                      <button class="shadow button py-3 px-4 bg-white rounded-br rounded-tr bg-gray-100" @click="() => this.textPickerStatus = !this.textPickerStatus">Pick</button>
                     </div>
                     <color-picker class="absolute z-10" v-model="textColor" v-show="textPickerStatus"></color-picker>
                   </div>
@@ -100,7 +100,7 @@
 
         <footer class="text-center text-white">
           created by <a class="text-blue-500" href="https://duganci.com" target="_blank">@burakduganci</a><br>
-          <small class="text-gray-500">This app works best in Google Chrome browser.</small>
+          <small class="text-gray-500">This app works on Google Chrome browser correctly.</small>
         </footer>
       </div>
 
