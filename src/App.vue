@@ -44,6 +44,7 @@
 										v-model="scene.phone">
 										<option value="nexus">Nexus</option>
 										<option value="iphone">iPhone</option>
+										<option value="nexus_black">Nexus Black</option>
 									</select>
 									<div
 										class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
