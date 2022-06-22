@@ -6,8 +6,9 @@
             <div class="editable-area flex justify-center items-center h-48 py-8 text-center overflow-hidden" :style="{'font-family': scene.fontFamily, 'font-size': scene.fontSize + 'px', 'color': scene.textColor.hex8 }">
 				{{ scene.text }}
             </div>
-            <img :src="require(`@/assets/images/${scene.phone}.png`)" alt="" class="phone-frame absolute bottom-0 w-full h-auto">
+			<img :src="require(`@/assets/images/click_and_select.png`)" class="screenshot-cover">
             <div class="screenshot-cover" :style="scene.screenshotBase64 ? {'background-image': 'url(' + scene.screenshotBase64 + ')'} : ''"></div>
+            <img :src="require(`@/assets/images/${scene.phone}.png`)" alt="" class="phone-frame absolute bottom-0 w-full h-auto">
         </div>
     </div>
 </template>
