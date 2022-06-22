@@ -42,9 +42,14 @@
 									<select
 										class="shadow block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 										v-model="scene.phone">
-										<option value="nexus">Nexus</option>
 										<option value="iphone">iPhone</option>
+										<option value="iphone_se_black">iPhone SE Black</option>
+										<option value="iphone_13_pro_max_graphite">iPhone 13 Pro Max Graphite</option>
+										<option value="nexus">Nexus</option>
 										<option value="nexus_black">Nexus Black</option>
+										<option value="pixel_5_just_black">Pixel 5 Just Black</option>
+										<option value="s21_ultra_black">S21 Ultra Black</option>
+										<option value="mi_mix_alpha">Mi Mix Alpha</option>
 									</select>
 									<div
 										class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
